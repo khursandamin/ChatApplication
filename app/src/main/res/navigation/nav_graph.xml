@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/welcomeFragment">
+    <fragment
+        android:id="@+id/chatFragment"
+        android:name="com.example.chatapplication.fragments.ChatFragment"
+        android:label="ChatFragment" >
+        <action
+            android:id="@+id/action_chatFragment_to_welcomeFragment"
+            app:destination="@id/welcomeFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.chatapplication.fragments.LoginFragment"
+        android:label="LoginFragment" >
+        <action
+            android:id="@+id/action_loginFragment_to_registeredUsersFragment"
+            app:destination="@id/registeredUsersFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/registrationFragments"
+        android:name="com.example.chatapplication.fragments.RegistrationFragments"
+        android:label="registation_fragment"
+        tools:layout="@layout/registation_fragment" >
+        <action
+            android:id="@+id/action_registrationFragments_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/welcomeFragment"
+        android:name="com.example.chatapplication.fragments.WelcomeFragment"
+        android:label="WelcomeFragment" >
+        <action
+            android:id="@+id/action_welcomeFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_welcomeFragment_to_registrationFragments"
+            app:destination="@id/registrationFragments" />
+    </fragment>
+    <fragment
+        android:id="@+id/registeredUsersFragment"
+        android:name="com.example.chatapplication.fragments.RegisteredUsersFragment"
+        android:label="RegisteredUsersFragment" />
+</navigation>

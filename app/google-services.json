@@ -1,0 +1,47 @@
+{
+  "project_info": {
+    "project_number": "716712733991",
+    "project_id": "chat-application-e6dac",
+    "storage_bucket": "chat-application-e6dac.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:716712733991:android:6e7df64f15a8bbd0df4d02",
+        "android_client_info": {
+          "package_name": "com.sofit.test"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "716712733991-qhhqskmb6t1dsfd2j4pvp8tn0n1t8jlt.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sofit.test",
+            "certificate_hash": "334a88b9a80f4b1bfc2e7ce973c8032df95b60c7"
+          }
+        },
+        {
+          "client_id": "716712733991-f0vfluc83uc4cpvnmlsepfuhhr5b320q.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBejFyg4vKfeaQKl67xJDL-NBY58RePn9U"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "716712733991-f0vfluc83uc4cpvnmlsepfuhhr5b320q.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
