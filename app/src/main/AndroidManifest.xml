@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
     package="com.example.chatapplication">
 
     <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
@@ -12,19 +13,25 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ChatApplication">
-        <activity android:name=".activities.RegistrationActivity"></activity>
-        <activity android:name=".activities.WelcomeActivity" >
-
+        <activity android:name=".activities.UpdateActivity"></activity>
+        <activity android:name=".activities.ChatLogActivity" />
+        <activity android:name=".activities.NewMessageActivity">
+            <meta-data
+                android:name="android.support.PARENT_ACTIVITY"
+                android:value=".activities.LatestMessengerActivity" />
         </activity>
-        <activity android:name=".activities.LoginActivity" />
-        <activity android:name=".activities.ChatScreenActivity" />
-        <activity android:name=".activities.MainActivity">
+        <activity android:name=".activities.LatestMessengerActivity"></activity>
+        <activity android:name=".activities.RegisteredUsersActivity" />
+        <activity android:name=".activities.RegistrationActivity" />
+        <activity android:name=".activities.WelcomeActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".activities.LoginActivity" />
+        <activity android:name=".activities.MainActivity" />
     </application>
 
 </manifest>

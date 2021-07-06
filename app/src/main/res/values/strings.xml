@@ -1,3 +1,9 @@
 <resources>
     <string name="app_name">ChatApplication</string>
+    <string name="sofitchatapp">SofitChatApp</string>
+    <string name="navigation_drawer_open">OpenDrawer</string>
+    <string name="navigation_drawer_close">CloseDrawer</string>
+    <string name="updateprofileactivity">UpdateProfileActivity</string>
+    <string name="send">send</string>
+    <string name="enter_message">Enter Message</string>
 </resources>

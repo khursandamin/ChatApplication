@@ -1,13 +1,10 @@
-package com.example.chatapplication.fragments
+package com.example.chatapplication.activities
 
+import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.text.Editable
 import android.text.TextWatcher
-import android.view.LayoutInflater
-import android.view.View
-import android.view.ViewGroup
 import android.widget.EditText
-import androidx.fragment.app.Fragment
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.example.chatapplication.R
@@ -18,26 +15,26 @@ import com.google.firebase.database.DataSnapshot
 import com.google.firebase.database.DatabaseError
 import com.google.firebase.database.FirebaseDatabase
 import com.google.firebase.database.ValueEventListener
+import kotlinx.android.synthetic.main.chat_screen.*
 import kotlinx.android.synthetic.main.registrered_users_fragment.*
 
-class RegisteredUsersFragment : Fragment() {
+class RegisteredUsersActivity : AppCompatActivity() {
     private var registerUserAdapter: RegisteredUserAdapter? = null
     private var registeredUsersList: List<UserInfoModelClass>? = null
     private var recyclerView: RecyclerView? = null
     private var searchEditText: EditText? = null
-    override fun onCreateView(
-        inflater: LayoutInflater,
-        container: ViewGroup?,
-        savedInstanceState: Bundle?
-    ): View? {
-        val view = inflater.inflate(R.layout.registrered_users_fragment, container, false)
-        searchEditText=view.findViewById(R.id.etSearch)
-        recyclerView = view.findViewById(R.id.rvSearch)
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        setContentView(R.layout.registrered_users_fragment)
+         searchEditText= findViewById(R.id.etSearch)
+        recyclerView = findViewById(R.id.rvSearch)
         recyclerView!!.setHasFixedSize(true)
-        recyclerView!!.layoutManager = LinearLayoutManager(context)
+        recyclerView!!.layoutManager = LinearLayoutManager(applicationContext)
         registeredUsersList = ArrayList()
+        rvSearch.layoutManager = LinearLayoutManager(this ,RecyclerView.VERTICAL, false)
+
         fethchAllUsers()
-      searchEditText!!.addTextChangedListener(object : TextWatcher {
+        searchEditText!!.addTextChangedListener(object : TextWatcher {
             override fun beforeTextChanged(s: CharSequence?, start: Int, count: Int, after: Int) {
             }
 
@@ -49,10 +46,7 @@ class RegisteredUsersFragment : Fragment() {
             }
 
         })
-
-        return view
     }
-
     private fun fethchAllUsers() {
         var firebaseUserId = FirebaseAuth.getInstance().currentUser!!.uid
         val refUsers = FirebaseDatabase.getInstance().reference.child("Users")
@@ -66,7 +60,7 @@ class RegisteredUsersFragment : Fragment() {
                         (registeredUsersList as ArrayList<UserInfoModelClass>).add(user)
                     }
                 }
-                registerUserAdapter = RegisteredUserAdapter(context!!, registeredUsersList!!, false)
+                registerUserAdapter = RegisteredUserAdapter(applicationContext!!, registeredUsersList!!, false)
                 recyclerView!!.adapter = registerUserAdapter
             }
 
@@ -96,7 +90,7 @@ class RegisteredUsersFragment : Fragment() {
                         }
                     }
                     registerUserAdapter =
-                        RegisteredUserAdapter(context!!, registeredUsersList!!, false)
+                        RegisteredUserAdapter(applicationContext!!, registeredUsersList!!, false)
                     recyclerView!!.adapter = registerUserAdapter
 
                 }
@@ -107,5 +101,4 @@ class RegisteredUsersFragment : Fragment() {
 
         })
     }
-
 }

@@ -6,7 +6,7 @@
     android:id="@+id/registeredUsersLayout"
     >
 <de.hdodenhof.circleimageview.CircleImageView
-    android:id="@+id/ivCircleImageView"
+    android:id="@+id/ivCircleImageViewNewMessage"
     android:layout_width="60dp"
     android:layout_height="60dp"
     app:layout_constraintStart_toStartOf="parent"
@@ -14,11 +14,11 @@
     android:src="@drawable/ic_person"
     />
     <TextView
-        android:id="@+id/tvUsernameRegistered"
+        android:id="@+id/tvUsernameNewMessage"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Username"
-        app:layout_constraintStart_toEndOf="@id/ivCircleImageView"
+        app:layout_constraintStart_toEndOf="@id/ivCircleImageViewNewMessage"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintBottom_toBottomOf="parent"/>
 
